@@ -23,8 +23,8 @@ if __name__ == '__main__':
     except GithubException:
         print("Authentication Error. Try saving a GitHub Token in your Repo Secrets or Use the GitHub Actions Token, which is automatically used by the action.")
         sys.exit(1)
-    contents = repo.get_file_contents("image/some.txt")
+    contents = repo.get_contents("image/some.txt")
     new_readme = open("new.txt","w")
     new_readme.write("Hello cosmos")
     repo.update_file(path=contents.path, message='Updated with Dev Metrics',
-                         content=new_readme, sha=contents.sha, branch='master')
+                         content='hello world', sha=contents.sha, branch='master')
