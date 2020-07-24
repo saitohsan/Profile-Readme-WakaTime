@@ -1,11 +1,14 @@
 #! /bin/bash
 
+pip3 install requirements.txt
+python3 main.py
+
 if [ -z "${INPUT_GITHUB_TOKEN}" ]; then
     echo "error: not found GITHUB_TOKEN"
     exit 1
 fi
 
-remote_repo="https://${INPUT_GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${INPUT_GITHUB_REPOSITORY}.git"
+remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git config http.sslVerify false
 git config user.email "actions@users.noreply.github.com"
 git config user.name "The Bot Airium"
