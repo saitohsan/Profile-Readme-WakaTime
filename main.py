@@ -12,7 +12,6 @@ import requests
 from github import Github, GithubException
 
 user = 'avinal'
-waka_key = os.getenv('INPUT_WAKATIME_API_KEY')
 ghtoken = os.getenv('INPUT_GH_TOKEN')
 show_title = 'true'
 
@@ -25,6 +24,5 @@ if __name__ == '__main__':
         sys.exit(1)
     contents = repo.get_contents("image/some.txt")
     new_readme = open("new.txt","w")
-    new_readme.write("Hello cosmos")
-    repo.update_file(path=contents.path, message='Updated with Dev Metrics',
-                         content='hello world', sha=contents.sha, branch='master')
+    new_readme.write("Hello cosmos with me ")
+    new_readme.close()
