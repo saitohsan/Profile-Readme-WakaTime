@@ -24,9 +24,10 @@ jobs:
     - uses: actions/setup-python@v2
     - name: Python Script
       run: |
-        echo "::set-env name=WAKATIME_API_KEY::${{ secrets.WAKATIME_API_KEY }}"
         pip install -r requirements.txt
         python main.py
+      env:
+        INPUT_WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
     - name: Grant permission
       run: chmod +x update.sh
     # Runs a single command using the runners shell
