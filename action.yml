@@ -5,6 +5,10 @@ inputs:
   WAKATIME_API_KEY:
     required: true
 
+  GITHUB_TOKEN:
+    required: true
+    default: ${{ github.token }}
+  
 runs:
   using: 'docker'
   image: 'Dockerfile'
