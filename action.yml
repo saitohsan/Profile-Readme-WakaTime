@@ -31,5 +31,11 @@ jobs:
     - name: Grant permission
       run: chmod +x update.sh
     # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: ./update.sh
+    - name: Run github Update action
+      run: |
+        git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+        git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+        if test -d /images; then cp stat.svg images; else mkdir images; cp stat.svg images; fi
+        git add "stat.svg"
+        git commit -m "Bot updated the image :alien:"
+        git push origin master
