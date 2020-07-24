@@ -22,9 +22,9 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
-      with:
-        WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
     - name: Python Script
+      env:
+        WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
       run: |
         pip install -r requirements.txt
         python main.py
