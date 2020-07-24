@@ -38,6 +38,7 @@ def make_graph(data: list):
         y_values=bar.get_y()+bar.get_height()/2
         plt.annotate(data[1][i], (x_value,y_values),xytext=(4,0),textcoords="offset points", va='center',ha='left')
     plt.savefig('stat.svg', bbox_inches='tight')
+    print("New Image Generated")
 
 def get_stats() -> list:
     '''Gets API data and returns markdown progress'''
@@ -58,9 +59,8 @@ def get_stats() -> list:
         lang_list.append(lang['name'])
         time_list.append(lang['text'])
         percent_list.append(lang['percent'])
-    print("Graph Generated")
-    print(lang_list)
     data_list = [lang_list,time_list, percent_list]
+    print("Coding Data Collected")
     return data_list
 
 if __name__ == '__main__':
