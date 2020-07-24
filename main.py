@@ -66,3 +66,4 @@ def get_stats() -> list:
 if __name__ == '__main__':
     waka_stat = get_stats()
     make_graph(waka_stat)
+    print("Python Run Successful")
