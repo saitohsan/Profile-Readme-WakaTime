@@ -1,0 +1,26 @@
+#! /bin/bash
+
+if [ -z "${GITHUB_TOKEN}" ]; then
+    echo "error: not found GITHUB_TOKEN"
+    exit 1
+fi
+
+remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+git config http.sslVerify false
+git config user.email "actions@users.noreply.github.com"
+git config user.name "The Bot Airium"
+git remote add publisher "${remote_repo}"
+git show-ref
+git branch --verbose
+echo "Git config added"
+
+git checkout master
+
+cp stat.svg image
+echo "Copied New Image"
+
+git add "stat.svg"
+git commit -m "Automated Update :alien:"
+git pull --rebase publisher master 
+git push publisher master
+echo "Git Push Successful"
