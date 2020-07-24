@@ -4,13 +4,13 @@ if [ -z "${INPUT_GITHUB_TOKEN}" ]; then
     echo "error: not found GITHUB_TOKEN"
     exit 1
 fi
-clone_repo="https://gtihub.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.git"
-git clone clone_repo
+clone_repo="https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.git"
+git clone "${clone_repo}"
 
-cp stat.svg ${GITHUB_ACTOR}/image
+cp stat.svg "${GITHUB_ACTOR}/image"
 echo "Copied New Image"
 
-cd clone_repo
+cd "${clone_repo}"
 
 remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 echo "$remote_repo"
