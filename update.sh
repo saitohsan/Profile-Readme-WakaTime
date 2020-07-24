@@ -4,5 +4,5 @@ git config user.name "avinal"
 python main.py
 cp some.txt image
 git add .
-git commit -m "Bot updated the file"
+git commit -m "I didn't update the file :alien:"
 git push origin master
