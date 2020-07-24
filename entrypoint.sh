@@ -10,7 +10,7 @@ git clone "${clone_repo}"
 cp stat.svg "${GITHUB_ACTOR}/image"
 echo "Copied New Image"
 
-cd "${clone_repo}"
+cd "${GITHUB_ACTOR}"
 
 remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 echo "$remote_repo"
