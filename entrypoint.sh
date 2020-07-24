@@ -1,5 +1,5 @@
 #! /bin/bash
-
+pwd
 if [ -z "${INPUT_GITHUB_TOKEN}" ]; then
     echo "error: not found GITHUB_TOKEN"
     exit 1
