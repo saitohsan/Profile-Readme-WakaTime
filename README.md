@@ -1,4 +1,4 @@
-# README-Python-Experiment
-Python and github actions experiments.
+# Profile_Readme-WakaTime
 
-![WakaTime Stat](image/stat.svg)
+## My WakaTime Coding Activity
+    ![Avinal WakaTime Activity](https://github.com/avinal/avinal/blob/master/images/stat.svg)
