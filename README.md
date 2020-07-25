@@ -42,6 +42,7 @@ jobs:
     name: Update the WakaTime Stat
     runs-on: ubuntu-latest
     steps:
+      # Use avinal/Profile-Readme-WakaTime@master for latest action
       - uses: avinal/Profile-Readme-WakaTime@v1.0
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
