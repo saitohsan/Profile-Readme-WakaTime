@@ -323,7 +323,7 @@
         "color": "#447265",
         "url": "https://github.com/trending?l=DM"
     },
-    "Dockerfile": {
+    "Docker": {
         "color": "#384d54",
         "url": "https://github.com/trending?l=Dockerfile"
     },
@@ -1307,7 +1307,7 @@
         "color": null,
         "url": "https://github.com/trending?l=ShaderLab"
     },
-    "Shell": {
+    "Bash": {
         "color": "#89e051",
         "url": "https://github.com/trending?l=Shell"
     },
