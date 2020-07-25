@@ -19,7 +19,8 @@ if [[ ! -d "${GITHUB_ACTOR}/images" ]]; then
 fi
 
 cp stat.svg "${GITHUB_ACTOR}/images"
-echo "copied new image"
+cp stat.png "${GITHUB_ACTOR}/images"
+echo "copied new images"
 
 cd "${GITHUB_ACTOR}"
 
