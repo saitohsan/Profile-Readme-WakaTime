@@ -23,6 +23,7 @@ echo "Copied New Image"
 cd "${GITHUB_ACTOR}"
 ls images/
 
+remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git config user.email "actions@users.noreply.github.com"
 git config user.name "github-actions[bot]"
 echo "Added name email"
@@ -31,6 +32,7 @@ git show-ref
 git branch --verbose
 echo "Git config added"
 
+git remote add publisher "${remote_repo}"
 git remote -v
 
 git checkout master
@@ -38,5 +40,5 @@ git checkout master
 git add .
 git commit -m "Automated Update :alien:"
 git pull
-git push origin master
+git push publisher master
 echo "Git Push Successful"
