@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import requests
 
-waka_key = 'a6b6f104-35ce-4752-9fef-b0579f4ee461'
+waka_key = os.getenv("INPUT_WAKATIME_API_KEY")
 
 
 def this_week() -> str:
