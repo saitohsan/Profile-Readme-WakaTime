@@ -1,4 +1,6 @@
 # Profile-Readme-WakaTime
+![LICENSE](https://img.shields.io/github/license/avinal/Profile-Readme-WakaTime?style=flat-square)
+![Release](https://img.shields.io/github/v/release/avinal/Profile-Readme-WakaTime?style=flat-square)
 
 If you use WakaTime to track your coding activity. You can add that to your README as a picture. 
 Just add this action to any of your repository and there you have it. See mine below.
