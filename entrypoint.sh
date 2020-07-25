@@ -24,7 +24,7 @@ cd "${GITHUB_ACTOR}"
 ls images/
 
 git config user.email "actions@users.noreply.github.com"
-git config user.name "The Bot Airium"
+git config user.name "github-actions[bot]"
 echo "Added name email"
 
 git show-ref
