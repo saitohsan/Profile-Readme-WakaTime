@@ -7,7 +7,7 @@ fi
 clone_repo="https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.git"
 git clone "${clone_repo}"
 
-cp $1 "${GITHUB_ACTOR}/image"
+cp stat.svg "${GITHUB_ACTOR}/image"
 echo "Copied New Image"
 
 cd "${GITHUB_ACTOR}"
