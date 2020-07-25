@@ -13,12 +13,13 @@ if [[ ! -f "stat.svg" ]]; then
     exit 1
 fi
 
-if [[ ! -d "${GITHUB_ACTOR}/images" ]]; then
+if [[ ! -d "${GITHUB_ACTOR}/images" ]]
+then
     mkdir "${GITHUB_ACTOR}/images"
     echo "images folder created"
 else
-    rm "${GITHUB_ACTOR}/images" stat.svg
-    rm "${GITHUB_ACTOR}/images" stat.png
+    rm "${GITHUB_ACTOR}/images/stat.svg" 
+    rm "${GITHUB_ACTOR}/images/stat.png" 
     echo "old images removed"
 fi
 

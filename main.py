@@ -36,6 +36,7 @@ def make_graph(data: list):
     for i, bar in enumerate(bars):
         if data[0][i] in color_data:
             bar.set_color(color_data[data[0][i]]["color"])
+            print(color_data[data[0][i]]["color"])
         x_value = bar.get_width()
         y_values = bar.get_y() + bar.get_height() / 2
         plt.annotate(
