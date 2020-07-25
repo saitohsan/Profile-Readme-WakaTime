@@ -3,4 +3,4 @@ FROM ubuntu:latest
 ADD requirements.txt main.py entrypoint.sh /
 RUN apt-get update && apt-get install -y git python3.8 python3-pip
 RUN pip3 install -r requirements.txt
-RUN python3 main.py && ls -a && pwd
+CMD python3 main.py && ls -a
