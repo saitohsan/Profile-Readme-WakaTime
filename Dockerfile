@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
 RUN ls -a
-RUN ls home
-RUN ls root
-RUN ls mnt
+RUN cd home && ls -a
+RUN cd .. && cd root && ls -a
+RUN cd .. && cd mnt && ls -a
