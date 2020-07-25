@@ -7,11 +7,22 @@ fi
 clone_repo="https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.git"
 git clone "${clone_repo}"
 
-cp stat.svg "${GITHUB_ACTOR}/image"
+if [[ ! -f "stat.svg" ]]; then
+    echo "File Lost"
+    exit 1
+fi
+
+if [[ ! -d "${GITHUB_ACTOR}/images" ]]; then
+    mkdir "${GITHUB_ACTOR}/images"
+    echo "Images Folder created"
+fi
+
+cp stat.svg "${GITHUB_ACTOR}/images"
 echo "Copied New Image"
 
 cd "${GITHUB_ACTOR}"
-ls image
+ls images/
+
 git config user.email "actions@users.noreply.github.com"
 git config user.name "The Bot Airium"
 echo "Added name email"
