@@ -21,7 +21,7 @@ def this_week() -> str:
 def make_graph(data: list):
     '''Make progress graph from API graph'''
     fig, ax = plt.subplots(figsize=(10,2))
-    with open('colors.json') as json_file:
+    with open('/colors.json') as json_file:
         color_data = json.load(json_file)
     y_pos = np.arange(len(data[0]))
     bars = ax.barh(y_pos,data[2])
