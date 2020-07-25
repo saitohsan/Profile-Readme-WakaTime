@@ -11,24 +11,22 @@ cp stat.svg "${GITHUB_ACTOR}/image"
 echo "Copied New Image"
 
 cd "${GITHUB_ACTOR}"
-
-remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-echo "$remote_repo"
-
-git config http.sslVerify false
+pwd
+ls -a
 git config user.email "actions@users.noreply.github.com"
 git config user.name "The Bot Airium"
 echo "Added name email"
-git remote add publisher "${remote_repo}"
-echo "Add publisher"
+
 git show-ref
 git branch --verbose
 echo "Git config added"
 
+git remote -v
+
 git checkout master
 
-git add "stat.svg"
+git add stat.svg
 git commit -m "Automated Update :alien:"
-git pull --rebase publisher master 
-git push publisher master
+git pull
+git push origin master
 echo "Git Push Successful"
