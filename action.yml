@@ -1,11 +1,14 @@
 name: 'WakaTime Stat Update Action'
 author: Avinal
+description: 'Generate a WakaTime activity bar graph to be used in the README.md'
 
 inputs:
   WAKATIME_API_KEY:
+    description: 'Your WakaTime API Key'
     required: true
 
   GITHUB_TOKEN:
+    description: 'GitHub access token with Repo'
     required: true
     default: ${{ github.token }}
   
