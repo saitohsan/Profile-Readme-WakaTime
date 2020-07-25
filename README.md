@@ -6,24 +6,17 @@ If you use WakaTime to track your coding activity. You can add that to your READ
 Just add this action to any of your repository and there you have it. See mine below.
 
 ## My WakaTime Coding Activity
-
-![Avinal WakaTime Activity](https://github.com/avinal/avinal/blob/master/images/stat.svg)
+<img src="https://github.com/avinal/avinal/blob/master/images/stat.svg" alt="Avinal WakaTime Activity"/>
 
 ## How to add one to your README.md
 1. First get your WakaTime API Key. You can get it from your [WakaTime](https://wakatime.com) account settings. 
 2. Save WakaTime API Key to Repository Secret. Find that by clicking the Settings tab.
 3. Add following line in your README.md of your repo.
+  ```html
+  <img src="https://github.com/<username>/<repository-name>/blob/master/images/stat.svg" alt="Alternative Text"/>
+  Example: <img src="https://github.com/avinal/avinal/blob/master/images/stat.svg" alt="Avinal WakaTime Activity"/>
   ```
-  ![Any Name](images/svg)
-  ```
-  In case it doesn't work try following 
-  
-  ```
-  ![Any Name](https://github.com/<username>/<repository-name>/blob/master/images/stat.svg)
-  
-  Example: ![Avinal WakaTime Activity](https://github.com/avinal/avinal/blob/master/images/stat.svg)
-  ```
-  You can use the second method to embed in web pages too. 
+  You can use this method to embed in web pages too. 
   
 4. Click **Action** tab and **choose set up a workflow yourself**.
 5. Copy the following code into the opened file, you can search for **WakaTime Stat** in marketplace tab for assistance.
@@ -31,10 +24,8 @@ Just add this action to any of your repository and there you have it. See mine b
 name: WakaTime stat update in README.md
 
 on:
-  push:
-    branches: [ master ]
   schedule:
-    # Runs at 12 am IST
+    # Runs at 12 am IST change to '0 0 * * *' for UTC
     - cron: '31 18 * * *'
 
 jobs:
@@ -42,13 +33,13 @@ jobs:
     name: Update the WakaTime Stat
     runs-on: ubuntu-latest
     steps:
-      # Use avinal/Profile-Readme-WakaTime@master for latest action
-      - uses: avinal/Profile-Readme-WakaTime@v1.0
+      # Use avinal/Profile-Readme-WakaTime@<latest-release-tag> for latest stable release
+      - uses: avinal/Profile-Readme-WakaTime@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
 ```
-
+6. When completed result looks like this:
 
 ## References
 * [Initial Inspiration - waka-readme](https://github.com/athul/waka-readme) by @athul
