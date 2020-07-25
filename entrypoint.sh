@@ -11,8 +11,7 @@ cp stat.svg "${GITHUB_ACTOR}/image"
 echo "Copied New Image"
 
 cd "${GITHUB_ACTOR}"
-pwd
-ls -a
+ls image
 git config user.email "actions@users.noreply.github.com"
 git config user.name "The Bot Airium"
 echo "Added name email"
@@ -25,7 +24,7 @@ git remote -v
 
 git checkout master
 
-git add stat.svg
+git add .
 git commit -m "Automated Update :alien:"
 git pull
 git push origin master

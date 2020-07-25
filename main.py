@@ -39,7 +39,6 @@ def make_graph(data: list):
         plt.annotate(data[1][i], (x_value,y_values),xytext=(4,0),textcoords="offset points", va='center',ha='left')
     plt.savefig('stat.svg', bbox_inches='tight')
     print("New Image Generated")
-    print(os.getcwd())
 
 def get_stats() -> list:
     '''Gets API data and returns markdown progress'''
