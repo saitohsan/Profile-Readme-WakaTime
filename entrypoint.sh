@@ -4,30 +4,34 @@ if [ -z "${INPUT_GITHUB_TOKEN}" ]; then
     exit 1
 fi
 
-clone_repo="https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.git"
+clone_repo="https://github.com/${GITHUB_REPOSITORY}.git"
 git clone "${clone_repo}"
 echo "Repository Cloned"
+
+IFS='/' read -ra reponame <<< "${GITHUB_REPOSITORY}"
+repository=${reponame[1]}"
+echo "repository name resolved ${repository}"
 
 if [[ ! -f "stat.svg" ]]; then
     echo "error: file lost! existing"
     exit 1
 fi
 
-if [[ ! -d "${GITHUB_ACTOR}/images" ]]
+if [[ ! -d "${repository}/images" ]]
 then
-    mkdir -p "${GITHUB_ACTOR}/images"
+    mkdir -p "${repository}/images"
     echo "images folder created"
 else
-    rm "${GITHUB_ACTOR}/images/stat.svg" 
-    rm "${GITHUB_ACTOR}/images/stat.png" 
+    rm "${repository}/images/stat.svg" 
+    rm "${repository}/images/stat.png" 
     echo "old images removed"
 fi
 
-cp stat.svg "${GITHUB_ACTOR}/images"
-cp stat.png "${GITHUB_ACTOR}/images"
+cp stat.svg "${repository}/images"
+cp stat.png "${repository}/images"
 echo "copied new images"
 
-cd "${GITHUB_ACTOR}"
+cd "${repository}"
 
 remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
