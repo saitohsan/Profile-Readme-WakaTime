@@ -8,14 +8,14 @@ clone_repo="https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.git"
 git clone "${clone_repo}"
 echo "Repository Cloned"
 
-if [[ ! -f "stat.svg" ]]; then
+if [[ ! -f "stat.*" ]]; then
     echo "error: file lost! existing"
     exit 1
 fi
 
 if [[ ! -d "${GITHUB_ACTOR}/images" ]]
 then
-    mkdir "${GITHUB_ACTOR}/images"
+    mkdir -p "${GITHUB_ACTOR}/images"
     echo "images folder created"
 else
     rm "${GITHUB_ACTOR}/images/stat.svg" 
