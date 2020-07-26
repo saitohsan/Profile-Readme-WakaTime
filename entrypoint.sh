@@ -8,7 +8,7 @@ clone_repo="https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.git"
 git clone "${clone_repo}"
 echo "Repository Cloned"
 
-if [[ ! -f "stat.*" ]]; then
+if [[ ! -f "stat.svg" ]]; then
     echo "error: file lost! existing"
     exit 1
 fi
