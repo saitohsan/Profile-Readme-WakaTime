@@ -9,7 +9,7 @@ git clone "${clone_repo}"
 echo "Repository Cloned"
 
 IFS='/' read -ra reponame <<< "${GITHUB_REPOSITORY}"
-repository=${reponame[1]}"
+repository="${reponame[1]}"
 echo "repository name resolved ${repository}"
 
 if [[ ! -f "stat.svg" ]]; then
