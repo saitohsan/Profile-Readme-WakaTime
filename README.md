@@ -39,6 +39,14 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
 ```
+6. Please wait till 12 AM UTC to run this workflow automatically. Or you can force run it by going to Action tab. Or you can add following lines under `on:` to run with every push. Search for 12 AM UTC to find equivalent time in your time zone. 
+```yml
+on:
+  push:
+    branch: [ master ]
+   schedule:
+    - cron: '1 0 * * *' 
+```
 
 ## References
 * [Initial Inspiration - waka-readme](https://github.com/athul/waka-readme) by @athul
