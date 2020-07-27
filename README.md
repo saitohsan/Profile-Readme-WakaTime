@@ -43,8 +43,8 @@ jobs:
 ```yml
 on:
   push:
-    branch: [ master ]
-   schedule:
+    branches: [ master ]
+  schedule:
     - cron: '1 0 * * *' 
 ```
 
