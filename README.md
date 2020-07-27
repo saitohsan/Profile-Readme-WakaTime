@@ -10,7 +10,7 @@ Just add this action to any of your repository and there you have it. See mine b
 
 ## How to add one to your README.md
 1. First get your WakaTime API Key. You can get it from your [WakaTime](https://wakatime.com) account settings. 
-2. Save WakaTime API Key to Repository Secret. Find that by clicking the Settings tab. Keep the name of secret as **WAKATIME_API_SECRET**.
+2. Save WakaTime API Key to Repository Secret. Find that by clicking the Settings tab. Keep the name of secret as **WAKATIME_API_KEY**.
 3. Add following line in your README.md of your repo.
   ```html
   <img src="https://github.com/<username>/<repository-name>/blob/master/images/stat.svg" alt="Alternative Text"/>
