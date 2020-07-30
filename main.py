@@ -1,6 +1,7 @@
 import datetime
 import json
 import os
+import random
 import sys
 
 import matplotlib.pyplot as plt
@@ -34,6 +35,11 @@ def make_graph(data: list):
     for i, bar in enumerate(bars):
         if data[0][i] in color_data:
             bar.set_color(color_data[data[0][i]]["color"])
+        else:
+            bar.set_color(
+                "#" + "".join([random.choice("0123456789ABCDEF")
+                               for j in range(6)])
+            )
         x_value = bar.get_width()
         y_values = bar.get_y() + bar.get_height() / 2
         plt.annotate(
