@@ -551,6 +551,10 @@
         "color": "#b7e1f4",
         "url": "https://github.com/trending?l=MTML"
     },
+    "NASM": {        
+        "color": "#6E4C13",       
+        "url": "https://github.com/trending?l=Assembly"  
+    },
     "NCL": {
         "color": "#28431f",
         "url": "https://github.com/trending?l=NCL"
