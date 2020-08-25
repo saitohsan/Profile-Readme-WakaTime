@@ -34,6 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Use avinal/Profile-Readme-WakaTime@<latest-release-tag> for latest stable release
+      # Do not change the line below except the word master with tag number maybe
       - uses: avinal/Profile-Readme-WakaTime@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
